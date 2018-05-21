@@ -7,6 +7,15 @@ def identiteta(n):
         matrika.append(vrstica)
     return matrika
 
+def transponiraj(a):
+    matrika = []
+    for j in range(len(a[0])):
+        vrstica = []
+        for i in range(len(a)):
+            vrstica.append(a[i][j])
+        matrika.append(vrstica)
+    return matrika
+
 def vsota_matrik(a, b):
     matrika = []
     if len(a) == len(b) and len(a[0]) == len(b[0]):
@@ -42,6 +51,10 @@ def produkt_matrik(a, b):
                 vrstica.append(vsota)
             matrika.append(vrstica)
     return matrika
+
+
+
+
                         
         
             
