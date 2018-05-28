@@ -13,6 +13,7 @@ def transponiraj(a):
         vrstica = []
         for i in range(len(a)):
             vrstica.append(a[i][j])
+            
         matrika.append(vrstica)
     return matrika
 
@@ -52,6 +53,23 @@ def produkt_matrik(a, b):
             matrika.append(vrstica)
     return matrika
 
+def ničelna_matrika(stolpci, vrstice):
+    matrika = []
+    for i in range(vrstice):
+        vrstica = []
+        for j in range(stolpci):
+            vrstica.append(0)
+        matrika.append(vrstica)
+    return matrika
+
+
+
+
+
+
+    
+
+        
 
 
 
