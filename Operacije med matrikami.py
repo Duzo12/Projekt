@@ -1,3 +1,5 @@
+import random
+
 def identiteta(n):
     matrika = []
     for i in range(n):
@@ -17,6 +19,24 @@ def transponiraj(a):
         matrika.append(vrstica)
     return matrika
 
+def ničelna_matrika(n):
+    matrika = []
+    for i in range(n):
+        vrstica = []
+        for j in range(n):
+            vrstica.append(0)
+        matrika.append(vrstica)
+    return matrika
+
+def poljubna_matrika(n):
+    matrika = []
+    for i in range(n):
+        vrstica = []
+        for j in range(n):
+            vrstica.append(random.randint(0, 99))
+        matrika.append(vrstica)
+    return matrika
+                           
 def vsota_matrik(a, b):
     matrika = []
     if len(a) == len(b) and len(a[0]) == len(b[0]):
@@ -53,14 +73,8 @@ def produkt_matrik(a, b):
             matrika.append(vrstica)
     return matrika
 
-def ničelna_matrika(stolpci, vrstice):
-    matrika = []
-    for i in range(vrstice):
-        vrstica = []
-        for j in range(stolpci):
-            vrstica.append(0)
-        matrika.append(vrstica)
-    return matrika
+
+
 
 
 
