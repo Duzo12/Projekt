@@ -10,13 +10,12 @@ def identiteta(n):
         matrika.append(vrstica)
     return matrika
 
-def transponiraj(a):
+def transponiraj(n):
     matrika = []
-    for j in range(len(a[0])):
+    for j in range(len(n[0])):
         vrstica = []
-        for i in range(len(a)):
-            vrstica.append(a[i][j])
-            
+        for i in range(len(n)):
+            vrstica.append(n[i][j])
         matrika.append(vrstica)
     return matrika
 
@@ -28,6 +27,18 @@ def ničelna_matrika(n):
             vrstica.append(0)
         matrika.append(vrstica)
     return matrika
+
+def sled_matrike(n):
+    vsota = []
+    for i in range(len(n)):
+        vrstica = []
+        for j in range(len(n)):
+            if i == j:
+                vrstica.append([i][j])
+                vsota.append(vrstica)
+    return vsota
+
+
 
 def poljubna_matrika(n):
     matrika = []

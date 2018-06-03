@@ -41,6 +41,33 @@ def vsota_matrik():
             if ime is not None:
                 matrike[ime] = Op.vsota_matrik(
                     matrike[n], matrike[m])
+
+def razlika_matrik():
+    n = simpledialog.askstring('Razlika matrik', 'Kateri matriki naj seštejem?', parent=okno)
+    m = simpledialog.askstring('Razlika matrik', 'Kateri matriki naj seštejem?', parent=okno)
+    if n is not None:
+        if m is not None:
+            ime = simpledialog.askstring('Razlika matrik', 'Ime matrike', parent=okno)
+            if ime is not None:
+                matrike[ime] = Op.razlika_matrik(matrike[n], matrike[m])
+            
+def produkt_matrik():
+    n = simpledialog.askstring('Produkt matrik', 'Kateri matriki naj seštejem?', parent=okno)
+    m = simpledialog.askstring('Produkt matrik', 'Kateri matriki naj seštejem?', parent=okno)
+    if n is not None:
+        if m is not None:
+            ime = simpledialog.askstring('Produkt matrik', 'Ime matrike', parent=okno)
+            if ime is not None:
+                matrike[ime] = Op.produkt_matrik(matrike[n], matrike[m])
+
+def sled_matrike():
+    n = simpledialog.askstring('Sled matrike', 'Kateri matriki naj izračunam sled?', parent=okno)
+    if n is not None:
+         ime = simpledialog.askstring('Produkt matrik', 'Ime matrike', parent=okno)
+         if ime is not None:
+             matrike[ime] = Op.sled_matrike(n)
+        
+
     
 
     
@@ -53,10 +80,12 @@ gumb_transponiraj = tk.Button(okno, text='Transponiraj',
                               command=transponiraj)
 gumb_vsota_matrik = tk.Button(okno, text='Seštej matriki',
                               command=vsota_matrik)
+gumb_sled_matrike = tk.Button(okno, text='Sled matrike',
+                              command=sled_matrike)
 gumb_razlika_matrik = tk.Button(okno, text='Odštej matriki',
-                                command=Op.razlika_matrik)
+                                command=razlika_matrik)
 gumb_produkt_matrik = tk.Button(okno, text='Zmnoži matriki',
-                                command=Op.produkt_matrik)
+                                command=produkt_matrik)
 
 
 gumb_identiteta.grid(row=0, column=0)
@@ -65,6 +94,7 @@ gumb_vsota_matrik.grid(row=0, column=3)
 gumb_razlika_matrik.grid(row=0, column=4)
 gumb_produkt_matrik.grid(row=0, column=5)
 gumb_poljubna_matrika.grid(row=0, column=1)
+gumb_sled_matrike .grid(row=0, column=6)
 
 
     
