@@ -29,13 +29,13 @@ def ničelna_matrika(n):
     return matrika
 
 def sled_matrike(n):
-    vsota = []
+    vsota = 0
     for i in range(len(n)):
-        vrstica = []
+        vrstica = 0
         for j in range(len(n)):
             if i == j:
-                vrstica.append([i][j])
-                vsota.append(vrstica)
+                vrstica += n[i][j]
+                vsota += vrstica
     return vsota
 
 
