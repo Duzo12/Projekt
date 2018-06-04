@@ -31,11 +31,8 @@ def ničelna_matrika(n):
 def sled_matrike(n):
     vsota = 0
     for i in range(len(n)):
-        vrstica = 0
-        for j in range(len(n)):
-            if i == j:
-                vrstica += n[i][j]
-                vsota += vrstica
+    
+                vsota += n[i][i]
     return vsota
 
 
@@ -84,8 +81,3 @@ def produkt_matrik(a, b):
                 vrstica.append(vsota)
             matrika.append(vrstica)
     return matrika
-                        
-        
-            
-    
-
