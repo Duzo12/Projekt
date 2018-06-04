@@ -6,6 +6,9 @@ import Operacije_med_matrikami as Op
 
 okno = tk.Tk()
 
+
+        
+
 matrike = {}
 
 def identiteta():
@@ -66,11 +69,19 @@ def sled_matrike():
          ime = simpledialog.askstring('Produkt matrik', 'Ime matrike', parent=okno)
          if ime is not None:
              matrike[ime] = Op.sled_matrike(n)
+
+def vrni_na_začetek():
+    n = matrike
+    if n is not None:
+        matrike = {}
+    return matrike
+
+
+
+
         
 
-    
 
-    
 
 gumb_identiteta = tk.Button(okno, text='Identiteta',
                             command=identiteta)
@@ -86,6 +97,9 @@ gumb_razlika_matrik = tk.Button(okno, text='Odštej matriki',
                                 command=razlika_matrik)
 gumb_produkt_matrik = tk.Button(okno, text='Zmnoži matriki',
                                 command=produkt_matrik)
+gumb_vrni_na_začetek = tk.Button(okno, text='Ponastavi',
+                                 command=vrni_na_začetek)
+
 
 
 gumb_identiteta.grid(row=0, column=0)
@@ -94,8 +108,8 @@ gumb_vsota_matrik.grid(row=0, column=3)
 gumb_razlika_matrik.grid(row=0, column=4)
 gumb_produkt_matrik.grid(row=0, column=5)
 gumb_poljubna_matrika.grid(row=0, column=1)
-gumb_sled_matrike .grid(row=0, column=6)
-
+gumb_sled_matrike.grid(row=0, column=6)
+gumb_vrni_na_začetek.grid(row=3, column=3)
 
     
 

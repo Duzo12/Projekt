@@ -84,7 +84,6 @@ def produkt_matrik(a, b):
                 vrstica.append(vsota)
             matrika.append(vrstica)
     return matrika
-
                         
         
             
