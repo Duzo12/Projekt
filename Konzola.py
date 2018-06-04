@@ -104,6 +104,13 @@ def izbrana_matrika():
                     print('Žal je matrika z imenom {} že v slovarju. Izberite si drugo ime'.format(ime))
                 else:
                     matrike[ime] = eval(a)
+
+def vrzi_v_datoteko():
+    a = simpledialog.askstring('Datoteka', 'Izberi ime matrike?', parent=okno)
+    with open('matrika.txt', 'a') as matrika:
+        print('{}:{}'.format(a, str(matrike[a])), file=matrika)
+                
+    
     
 
 gumb_identiteta = tk.Button(okno, text='Identiteta',
@@ -127,6 +134,8 @@ gumb_izbriši_matriko = tk.Button(okno, text='Izbriši sled ali matriko',
                                  command=izbriši_matriko)
 gumb_izbrana_matrika = tk.Button(okno, text='Dodaj izbrano matriko',
                                  command=izbrana_matrika)
+gumb_vrzi_v_datoteko = tk.Button(okno, text='Vrzi v datoteko',
+                                 command=vrzi_v_datoteko)
 
 gumb_identiteta.grid(row=0, column=0)
 gumb_transponiraj.grid(row=0, column=2)
@@ -138,5 +147,6 @@ gumb_sled_matrike.grid(row=0, column=6)
 gumb_vrni_na_začetek.grid(row=2, column=3)
 gumb_izbriši_matriko.grid(row=2, column=4)
 gumb_izbrana_matrika.grid(row=2, column=6)
+gumb_vrzi_v_datoteko.grid(row=3, column=4)
 
 okno.mainloop()
