@@ -114,27 +114,27 @@ def vrzi_v_datoteko():
     
 
 gumb_identiteta = tk.Button(okno, text='Ustvari identično matriko',
-                            command=identiteta)
+                            command=identiteta, width=30)
 gumb_poljubna_matrika = tk.Button(okno, text='Poljubna matrika',
-                                  command=poljubna_matrika)
+                                  command=poljubna_matrika, width=30)
 gumb_transponiraj = tk.Button(okno, text='Transponiraj matriko',
-                              command=transponiraj)
+                              command=transponiraj, width=30)
 gumb_vsota_matrik = tk.Button(okno, text='Seštej matriki',
-                              command=vsota_matrik)
+                              command=vsota_matrik, width=30)
 gumb_sled_matrike = tk.Button(okno, text='Sled matrike',
-                              command=sled_matrike)
+                              command=sled_matrike, width=30)
 gumb_razlika_matrik = tk.Button(okno, text='Odštej matriki',
-                                command=razlika_matrik)
+                                command=razlika_matrik, width=30)
 gumb_produkt_matrik = tk.Button(okno, text='Zmnoži matriki',
-                                command=produkt_matrik)
+                                command=produkt_matrik, width=30)
 gumb_vrni_na_začetek = tk.Button(okno, text='Izbriši ves seznam matrik',
-                                 command=vrni_na_začetek)
+                                 command=vrni_na_začetek, width=30)
 gumb_izbriši_matriko = tk.Button(okno, text='Izbriši sled ali matriko',
-                                 command=izbriši_matriko)
+                                 command=izbriši_matriko, width=30)
 gumb_izbrana_matrika = tk.Button(okno, text='Dodaj izbrano matriko',
-                                 command=izbrana_matrika)
+                                 command=izbrana_matrika, width=30)
 gumb_vrzi_v_datoteko = tk.Button(okno, text='Vrzi v datoteko',
-                                 command=vrzi_v_datoteko)
+                                 command=vrzi_v_datoteko, width=30)
 
 gumb_identiteta.grid(row=1, column=0)
 gumb_transponiraj.grid(row=5, column=0)
