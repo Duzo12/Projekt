@@ -55,6 +55,8 @@ def vsota_matrik():
                 else:
                     matrike[ime] = Op.vsota_matrik(
                     matrike[a], matrike[b])
+                    if matrike.get(ime) == None:
+                        print('Velikosti matrik se ne ujemata')
 
 def razlika_matrik():
     a = simpledialog.askstring('Razlika matrik', 'Izberite matriko', parent=okno)
@@ -67,6 +69,9 @@ def razlika_matrik():
                     print('Žal je matrika z imenom {} že v slovarju. Izberite si drugo ime'.format(ime))
                 else:
                     matrike[ime] = Op.razlika_matrik(matrike[a], matrike[b])
+                    if matrike.get(ime) == None:
+                        print('Velikosti matrik se ne ujemata')
+                    
             
 def produkt_matrik():
     a = simpledialog.askstring('Produkt matrik', 'Izberite matriko', parent=okno)
@@ -79,6 +84,8 @@ def produkt_matrik():
                     print('Žal je matrika z imenom {} že v slovarju. Izberite si drugo ime'.format(ime))
                 else:
                     matrike[ime] = Op.produkt_matrik(matrike[a], matrike[b])
+                    if matrike.get(ime) == None:
+                        print('Velikosti matrik se ne ujemata')
 
 def sled_matrike():
     a = simpledialog.askstring('Sled matrike', 'Kateri matriki naj izračunam sled?', parent=okno)
