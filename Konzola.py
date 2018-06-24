@@ -20,15 +20,17 @@ def identiteta():
                 matrike[ime]= Op.identiteta(a)
 
 def poljubna_matrika():
-    a = simpledialog.askinteger('Poljubna matrika', 'Velikost matrike?', parent=okno,
+    a = simpledialog.askinteger('Poljubna matrika', 'Število vrstic?', parent=okno,
                                minvalue=1, maxvalue=99)
-    if a is not None:
+    b = simpledialog.askinteger('Poljubna matrika', 'Število stolpcev?', parent=okno,
+                                minvalue=1, maxvalue=99)
+    if a and  b is not None:
         ime = simpledialog.askstring('Poljubna matrika', 'Ime matrike?', parent=okno)
         if ime is not None:
             if ime in matrike:
                 print('Žal je matrika z imenom {} že v slovarju. Izberite drugo ime'.format(ime))    
             else:
-                matrike[ime]= Op.poljubna_matrika(a)
+                matrike[ime]= Op.poljubna_matrika(a, b)
 
 def transponiraj():
     a = simpledialog.askstring('Transponiraj', 'Napišite ime matrike, ki jo želite transponirati?', parent=okno,)
@@ -109,10 +111,16 @@ def vrzi_v_datoteko():
     a = simpledialog.askstring('Datoteka', 'Izberi ime matrike?', parent=okno)
     with open('matrika.txt', 'a') as matrika:
         print('{}:{}'.format(a, str(matrike[a])), file=matrika)
-                
-    
-    
 
+#Meni
+meni = tk.Menu(okno)
+podmeni = tk.Menu(meni, tearoff=0)
+podmeni.add_command(label='Izbriši ves seznam matrik', command=vrni_na_začetek)
+podmeni.add_command(label='Izbriši sled ali matriko', command=izbriši_matriko)
+meni.add_cascade(label='Izbriši', menu=podmeni)
+meni.add_command(label='Vrzi v datoteko', command=vrzi_v_datoteko)
+okno.configure(menu=meni)
+    
 gumb_identiteta = tk.Button(okno, text='Ustvari identično matriko',
                             command=identiteta, width=30)
 gumb_poljubna_matrika = tk.Button(okno, text='Poljubna matrika',
@@ -127,14 +135,8 @@ gumb_razlika_matrik = tk.Button(okno, text='Odštej matriki',
                                 command=razlika_matrik, width=30)
 gumb_produkt_matrik = tk.Button(okno, text='Zmnoži matriki',
                                 command=produkt_matrik, width=30)
-gumb_vrni_na_začetek = tk.Button(okno, text='Izbriši ves seznam matrik',
-                                 command=vrni_na_začetek, width=30)
-gumb_izbriši_matriko = tk.Button(okno, text='Izbriši sled ali matriko',
-                                 command=izbriši_matriko, width=30)
 gumb_izbrana_matrika = tk.Button(okno, text='Dodaj izbrano matriko',
                                  command=izbrana_matrika, width=30)
-gumb_vrzi_v_datoteko = tk.Button(okno, text='Vrzi v datoteko',
-                                 command=vrzi_v_datoteko, width=30)
 
 gumb_identiteta.grid(row=1, column=0)
 gumb_transponiraj.grid(row=5, column=0)
@@ -143,9 +145,6 @@ gumb_razlika_matrik.grid(row=7, column=0)
 gumb_produkt_matrik.grid(row=8, column=0)
 gumb_poljubna_matrika.grid(row=2, column=0)
 gumb_sled_matrike.grid(row=4, column=0)
-gumb_vrni_na_začetek.grid(row=11, column=0)
-gumb_izbriši_matriko.grid(row=9, column=0)
 gumb_izbrana_matrika.grid(row=3, column=0)
-gumb_vrzi_v_datoteko.grid(row=10, column=0)
 
 okno.mainloop()

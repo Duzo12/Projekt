@@ -36,12 +36,11 @@ def sled_matrike(n):
     return vsota
 
 
-
-def poljubna_matrika(n):
+def poljubna_matrika(vrstice, stolpci):
     matrika = []
-    for i in range(n):
+    for i in range(vrstice):
         vrstica = []
-        for j in range(n):
+        for j in range(stolpci):
             vrstica.append(random.randint(0, 99))
         matrika.append(vrstica)
     return matrika
