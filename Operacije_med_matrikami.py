@@ -31,8 +31,7 @@ def ničelna_matrika(n):
 def sled_matrike(n):
     vsota = 0
     for i in range(len(n)):
-    
-                vsota += n[i][i]
+               vsota += n[i][i]
     return vsota
 
 
